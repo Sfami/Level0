@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Task0_9 {
 
@@ -6,19 +7,24 @@ public class Task0_9 {
         numberOfVowels("Orifha");
     }
     public static void numberOfVowels(String word){
-
-        char[] vowels = new char[]{'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'};
-        ArrayList<Character> vowelsArray = new ArrayList<>();
-
-        for (char vowel : vowels){
-            vowelsArray.add(vowel);
-        }
+        ArrayList<String> vowels = new ArrayList<>(Arrays.asList(new String[]{"a", "e", "i", "o", "u"}));
+        ArrayList<String> vowelsAlreadyListed = new ArrayList<>();
+        ArrayList<String> finalListedVowels = new ArrayList<>();
+        String stringOfVowels = "";
         for (int i = 0; i < word.length(); i++){
-            char letter = word.charAt(i);
-            if (vowelsArray.contains(letter)){
-                System.out.println(letter);
+            String letter = "" + word.charAt(i);
+            letter = letter.toLowerCase();
+            if (vowels.contains(letter)){
+                if (!vowelsAlreadyListed.contains(letter)){
+                    finalListedVowels.add(letter);
+                }
             }
         }
+        for (int i = 0; i < finalListedVowels.size(); i++) {
+            if (i == 0) stringOfVowels += finalListedVowels.get(i);
+            else stringOfVowels += ", " + finalListedVowels.get(i);
+        }
+        System.out.println(stringOfVowels);
 
     }
 }
