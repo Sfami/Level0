@@ -1,11 +1,10 @@
 public class Task0_8 {
 
     public static void main(String[] args) {
-	// write your code here
-        System.out.println(convertToHours(61));
+        System.out.println(convertToHoursAndMinutes(61));
 
     }
-    public static String convertToHours(double number){
+    public static String convertToHoursAndMinutes(double number){
         String hoursString = "";
 
         if (Math.floor(number / 60) > 1){
