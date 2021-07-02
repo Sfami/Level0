@@ -1,35 +1,39 @@
-import java.util.ArrayList;
+import java.util.*;
 
 public class Task0_10 {
 
     public static void main(String[] args) {
-	// write your code here
         commonLetters("house", "computers");
     }
 
-    public static void commonLetters(String string1, String string2){
-
-        ArrayList<Character> longestStringLetters = new ArrayList<>();
-        String longestString = new String();
-        String shortestString = new String();
-        if (string1.length() > string2.length()){
-            longestString = string1;
-            shortestString = string2;
+    public static void commonLetters(String word1, String word2){
+        String longestWord = word1;
+        String shortestWord = word2;
+        int iterations = word1.length();
+        if (word2.length() > iterations) {
+            iterations = word2.length();
+            longestWord = word2;
+            shortestWord = word1;
         }
-        else {
-            longestString = string2;
-            shortestString = string1;
+        ArrayList<String> longestWordLetters = new ArrayList<>();
+        for (int i = 0; i < longestWord.length(); i++) {
+            longestWordLetters.add("" + longestWord.charAt(i));
         }
-        for (int i = 0; i < longestString.length(); i++){
-            char letter = longestString.charAt(i);
-            longestStringLetters.add(letter);
-        }
-
-        for (int i = 0; i < shortestString.length(); i++){
-            char letter = shortestString.charAt(i);
-            if (longestStringLetters.contains(letter)){
-                System.out.println(letter);
+        ArrayList<String> commonLetters = new ArrayList<>();
+        for (int i = 0; i < shortestWord.length(); i++){
+            String letter = "" + shortestWord.charAt(i);
+            letter = letter.toLowerCase();
+            if (longestWordLetters.contains(letter)){
+                if (!commonLetters.contains(letter)){
+                    commonLetters.add(letter);
+                }
             }
         }
+        String stringOfCommonLetters = "";
+        for (int i = 0; i < commonLetters.size(); i++) {
+            if (i == 0) stringOfCommonLetters += commonLetters.get(i);
+            else stringOfCommonLetters += ", " + commonLetters.get(i);
+        }
+        System.out.println(stringOfCommonLetters);
     }
 }
