@@ -15,15 +15,15 @@ public class Task0_10 {
             longestWord = word2;
             shortestWord = word1;
         }
-        ArrayList<String> longestWordLetters = new ArrayList<>();
-        for (int i = 0; i < longestWord.length(); i++) {
-            longestWordLetters.add("" + longestWord.charAt(i));
+        ArrayList<String> shortestWordLetters = new ArrayList<>();
+        for (int i = 0; i < shortestWord.length(); i++) {
+            shortestWordLetters.add("" + shortestWord.charAt(i));
         }
         ArrayList<String> commonLetters = new ArrayList<>();
-        for (int i = 0; i < shortestWord.length(); i++){
-            String letter = "" + shortestWord.charAt(i);
+        for (int i = 0; i < longestWord.length(); i++){
+            String letter = "" + longestWord.charAt(i);
             letter = letter.toLowerCase();
-            if (longestWordLetters.contains(letter)){
+            if (shortestWordLetters.contains(letter)){
                 if (!commonLetters.contains(letter)){
                     commonLetters.add(letter);
                 }
