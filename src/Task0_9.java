@@ -10,7 +10,7 @@ public class Task0_9 {
         ArrayList<String> vowels = new ArrayList<>(Arrays.asList(new String[]{"a", "e", "i", "o", "u"}));
         ArrayList<String> vowelsAlreadyListed = new ArrayList<>();
         ArrayList<String> finalListedVowels = new ArrayList<>();
-        String stringOfVowels = "";
+        String stringOfVowels = "Vowels: ";
         for (int i = 0; i < word.length(); i++){
             String letter = "" + word.charAt(i);
             letter = letter.toLowerCase();
