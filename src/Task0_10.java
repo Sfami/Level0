@@ -29,7 +29,7 @@ public class Task0_10 {
                 }
             }
         }
-        String stringOfCommonLetters = "";
+        String stringOfCommonLetters = "Common letters: ";
         for (int i = 0; i < commonLetters.size(); i++) {
             if (i == 0) stringOfCommonLetters += commonLetters.get(i);
             else stringOfCommonLetters += ", " + commonLetters.get(i);
